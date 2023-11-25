@@ -126,8 +126,46 @@ myPost({
 
 // with arrays
 
-let posts: Author[] = []
+let posts: Author[] = [];
 
-posts.push(me)
+posts.push(me);
 
-console.log(posts)
+console.log(posts);
+
+// type alias
+
+type Rgb = [number, number, number];
+
+// examples and practives
+
+function getRandomColor(): Rgb {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+
+  return [r, g, b];
+}
+
+const colorOne = getRandomColor();
+const colorTwo = getRandomColor();
+
+console.log(colorOne);
+console.log(colorTwo);
+
+// example with object literal
+
+type User = {
+  name: string;
+  score: number;
+};
+
+const userOne: User = { name: "Steven", score: 75 };
+
+console.log(userOne);
+
+function formatUser(user: User): void {
+  console.log(`${user.name} has a score of ${user.score}`);
+}
+
+formatUser(userOne);
+formatUser({ name: "Biko", score: 45 });

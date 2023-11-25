@@ -73,3 +73,21 @@ myPost({
 let posts = [];
 posts.push(me);
 console.log(posts);
+// examples and practives
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+const colorOne = getRandomColor();
+const colorTwo = getRandomColor();
+console.log(colorOne);
+console.log(colorTwo);
+const userOne = { name: "Steven", score: 75 };
+console.log(userOne);
+function formatUser(user) {
+    console.log(`${user.name} has a score of ${user.score}`);
+}
+formatUser(userOne);
+formatUser({ name: "Biko", score: 45 });
