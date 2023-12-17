@@ -1,93 +1,23 @@
 "use strict";
-// arrays
-let names = ["Steven", "Peter", "Modimo"];
-let ages = [1, 2, 3, 4, 45, 6, 77];
-names.pop();
-names.push("Biko"); // place an item at the end od the array
-names.shift(); // remove the first item from an array
-names.unshift("Huncho"); // adds item at the begining of the array
-// type inference with arrays
-let con = ["rain", "snow", "sleet", "hail", "clear"];
-let things = ["Name", 1, true];
-// object literals
-let user = {
-    name: "Steven",
-    age: 22,
-    online: true,
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-user.name = "Modimo";
-// type inference with object literals
-let persons = {
-    name: "Luigi",
-    score: 35,
-};
-// functions
-function add(items) {
-    const total = items.reduce((a, c) => a + c, 1);
+Object.defineProperty(exports, "__esModule", { value: true });
+const os_1 = __importDefault(require("os"));
+const PLATFORM = os_1.default.platform();
+switch (PLATFORM) {
+    case "win32":
+        console.log("Windows");
+        break;
+    case "linux":
+        console.log("Linux");
+        break;
+    case "android":
+        console.log("Android");
+        break;
+    case "darwin":
+        console.log("Mac OS");
+        break;
+    default:
+        console.log("OS Not found");
 }
-add([1, 2, 3]);
-// type inference with functions
-function greet(name, greeting) {
-    return `${greeting}, ${name}`;
-}
-const result = greet("Marion", "Hello");
-// any type
-let anything;
-anything = "Steven";
-console.log(anything);
-let arr;
-arr = ["Steven", "Modimo"];
-console.log(arr);
-// array in typescript is a collections of values of a single type in no specific order
-// tuple in typescript is a collection of values of different types in specific order
-// tuples
-let person = ["Mario", 2, false];
-let hsla = [200, "100%", "50%", 1];
-function cords() {
-    const lat = 2.1;
-    const lon = 40;
-    return [lat, lon];
-}
-const [lat, lon] = cords();
-console.log(lat, ",", lon);
-/// names tuples
-let use;
-use = ["peach", 2];
-const me = {
-    author: "Ben Carson",
-    author_id: 1,
-    book_name: "Gifted Hands",
-    book_id: 23,
-};
-// as function argument types
-function myPost(post) {
-    console.log(post);
-}
-myPost({
-    title: "Biko",
-    body: "How to learn",
-    tags: ["books", "reading", "hobbies"],
-    created_at: new Date(),
-});
-// with arrays
-let posts = [];
-posts.push(me);
-console.log(posts);
-// examples and practives
-function getRandomColor() {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return [r, g, b];
-}
-const colorOne = getRandomColor();
-const colorTwo = getRandomColor();
-console.log(colorOne);
-console.log(colorTwo);
-const userOne = { name: "Steven", score: 75 };
-console.log(userOne);
-function formatUser(user) {
-    console.log(`${user.name} has a score of ${user.score}`);
-}
-formatUser(userOne);
-formatUser({ name: "Biko", score: 45 });
